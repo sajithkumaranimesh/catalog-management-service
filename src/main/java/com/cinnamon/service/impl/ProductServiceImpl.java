@@ -37,9 +37,7 @@ public class ProductServiceImpl implements ProductService {
         List<Product> productList = new ArrayList<>();
 
         List<ProductEntity> productEntityList = productRepository.findAll();
-        productEntityList.forEach(productEntity -> {
-            productList.add(modelMapper.map(productEntity, Product.class));
-        });
+        productEntityList.forEach(productEntity -> productList.add(modelMapper.map(productEntity, Product.class)));
 
         return productList;
     }
