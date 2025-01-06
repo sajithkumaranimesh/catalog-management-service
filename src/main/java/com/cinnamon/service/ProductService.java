@@ -8,4 +8,6 @@ public interface ProductService {
     Product persist(Product product);
 
     List<Product> retrieveAll();
+
+    Product retrieveById(Long id);
 }

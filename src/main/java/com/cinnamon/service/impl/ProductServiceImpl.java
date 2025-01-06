@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -40,5 +41,11 @@ public class ProductServiceImpl implements ProductService {
         productEntityList.forEach(productEntity -> productList.add(modelMapper.map(productEntity, Product.class)));
 
         return productList;
+    }
+
+    @Override
+    public Product retrieveById(Long id) {
+        Optional<ProductEntity> productEntity = productRepository.findById(id);
+        return modelMapper.map(productEntity, Product.class);
     }
 }
