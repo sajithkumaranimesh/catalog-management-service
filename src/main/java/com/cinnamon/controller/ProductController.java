@@ -5,6 +5,8 @@ import com.cinnamon.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @CrossOrigin
 @RestController
 @RequiredArgsConstructor
@@ -16,5 +18,15 @@ public class ProductController {
     @PostMapping()
     public Product persist(@RequestBody Product product){
         return productService.persist(product);
+    }
+
+    @GetMapping()
+    public List<Product> retrieveAll(){
+        return productService.retrieveAll();
+    }
+
+    @GetMapping("/{id}")
+    public Product retrieveById(@PathVariable Long id){
+        return productService.retrieveById(id);
     }
 }
