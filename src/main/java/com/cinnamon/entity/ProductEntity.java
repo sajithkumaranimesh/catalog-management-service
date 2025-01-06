@@ -18,7 +18,7 @@ public class ProductEntity {
     private Long id;
     private String name;
     private String description;
-    private String price;
+    private Double price;
 
     @Column(name = "quantity_in_stock")
     private Integer quantityInStock;
