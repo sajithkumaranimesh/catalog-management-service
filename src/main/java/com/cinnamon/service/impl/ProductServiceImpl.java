@@ -56,4 +56,10 @@ public class ProductServiceImpl implements ProductService {
 
         return modelMapper.map(saved, Product.class);
     }
+
+    @Override
+    public Product deleteById(Long id) {
+        productRepository.deleteById(id);
+        return null;
+    }
 }
