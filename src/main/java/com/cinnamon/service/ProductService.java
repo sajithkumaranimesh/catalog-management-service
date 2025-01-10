@@ -10,4 +10,6 @@ public interface ProductService {
     List<Product> retrieveAll();
 
     Product retrieveById(Long id);
+
+    Product updateById(Product product);
 }

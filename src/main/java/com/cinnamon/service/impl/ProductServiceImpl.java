@@ -48,4 +48,12 @@ public class ProductServiceImpl implements ProductService {
         Optional<ProductEntity> productEntity = productRepository.findById(id);
         return modelMapper.map(productEntity, Product.class);
     }
+
+    @Override
+    public Product updateById(Product product) {
+        ProductEntity productEntity = modelMapper.map(product, ProductEntity.class);
+        ProductEntity saved = productRepository.save(productEntity);
+
+        return modelMapper.map(saved, Product.class);
+    }
 }

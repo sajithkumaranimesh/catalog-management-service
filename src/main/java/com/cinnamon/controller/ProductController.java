@@ -29,4 +29,9 @@ public class ProductController {
     public Product retrieveById(@PathVariable Long id){
         return productService.retrieveById(id);
     }
+
+    @PatchMapping()
+    public Product updateById(@RequestBody Product product){
+        return productService.updateById(product);
+    }
 }
